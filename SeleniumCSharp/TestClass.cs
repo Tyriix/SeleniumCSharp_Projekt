@@ -23,7 +23,7 @@ namespace SeleniumCSharp
 
             //Dodano przez zmiany w budowie strony facebook
 
-            //Kliknięcie w akceptację cookies
+            //Kliknięcie w przycisk akceptacji cookies
             driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div/div/div/div/div[3]/button[2]")).Click();
             //Kliknięcie w przycisk "Utwórz nowe konto"
             driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[1]/form/div[5]/a")).Click();

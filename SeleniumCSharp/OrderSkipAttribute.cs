@@ -33,17 +33,17 @@ namespace SeleniumCSharp
         [Test, Order(2), Category("OrderSkipAttribute")]
         public void TestMethod2()
         {
+            Assert.Ignore("Nie działa z powodu złego sterownika geckodriver.");
             IWebDriver driver = new FirefoxDriver();
             driver.Url = "https://www.facebook.com/";
             IWebElement emailTextField = driver.FindElement(By.XPath(".//*[@id='email']"));
             emailTextField.SendKeys("Selenium C#");
             driver.Close();
         }
-
-        //Nie działa poprawnie ze względu wycofania Internet Explorer z użytku
         [Test, Order(1), Category("OrderSkipAttribute")]
         public void TestMethod3()
         {
+            Assert.Ignore("Nie działa z powodu wycofania przeglądarki Internet Explorer z użytku.");
             IWebDriver driver = new InternetExplorerDriver();
             driver.Url = "https://www.facebook.com/";
             IWebElement emailTextField = driver.FindElement(By.XPath(".//*[@id='email']"));
@@ -51,7 +51,7 @@ namespace SeleniumCSharp
             driver.Close();
         }
 
-        //Dodałem MSEdge ze względu wycofania InternetExplorer(Powyższy test InternetExplorer nie działa poprawnie)
+        //Dodałem MSEdge ze względu wycofania InternetExplorer (Powyższy test InternetExplorer nie działa poprawnie)
         [Test, Order(0), Category("OrderSkipAttribute")]
         public void TestMethod4()
         {
